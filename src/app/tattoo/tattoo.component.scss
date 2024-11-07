@@ -27,18 +27,22 @@
     box-sizing: border-box;
     padding: 10px;
 }
+.pintura{
+}
   
 .home {
     font-family: Satoshi-Variable;
     background-color: black;
     background-image: url('../../../public/assets/images/home/fundo.png');
     
+    
     h1 {
         font-size: 80px;
         font-family: Angel;
         color: #FFF4EB;
         letter-spacing: 4px;
-        
+        padding-bottom: 30px;
+
         .highlight {
             color: #DB9F6A;
         }
@@ -51,6 +55,8 @@
         font-size: 1.5vw;
         gap: 30px;
         color: white;
+        padding-bottom: 30px;
+
     }
     
     .inicio {
@@ -62,15 +68,21 @@
         .caveira img {
             margin: 2px;
             width: auto;
-            height: 500px;
+            height:100vh;
         }
 
     }
   
     .botaoOrcamento {
-        width: 70%;
+        width: 65%;
         margin-bottom: 10px;
         cursor: pointer;
+    }
+
+    .divulgacao {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
   
 }

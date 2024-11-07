@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+
 @Component({
   selector: 'app-root',
   template: `
@@ -9,4 +10,6 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule]
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'tattoo-studio';
+}
