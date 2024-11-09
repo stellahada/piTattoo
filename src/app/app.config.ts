@@ -1,16 +1,7 @@
-import { provideRouter, Routes, withRouterConfig } from '@angular/router';
-import { TattooComponent } from './tattoo/tattoo.component';
-import { importProvidersFrom } from '@angular/core';
-import { LoginComponent } from './login/login.component';
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
 
-export const routes: Routes = [
-  { path: '', component: TattooComponent },
-  { path: 'login', component: LoginComponent },
-];
-
-export const appConfig = {
-  providers: [
-    provideRouter(routes),
-    
-  ]
+export const appConfig: ApplicationConfig = {
+  providers: [provideRouter(routes)]
 };

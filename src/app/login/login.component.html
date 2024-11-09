@@ -6,17 +6,16 @@
       </div>
   
       <div class="login">
-        <form class="form" (ngSubmit)="logar()">
           <div class="inputs">
-            <label for="email">Email:</label>
-            <input type="text" id="email" [(ngModel)]="email" name="email" required>
-  
+            <label for="cpf">CPF:</label>
+            <input type="text" [(ngModel)]="cpf" name="cpf" required />
+
             <label for="senha">Senha:</label>
             <input type="password" id="senha" [(ngModel)]="senha" name="senha" required>
           </div>
   
           <div class="botao">
-            <button type="submit">Login</button>
+            <button (click)="logar()">Login</button>
           </div>
         </form>
       </div>

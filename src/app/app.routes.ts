@@ -7,10 +7,3 @@ export const routes: Routes = [
     { path: 'about', component: TattooComponent },
     { path: 'login', component: LoginComponent },
 ];
-
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-  })
-  export class AppRoutingModule { }
-  

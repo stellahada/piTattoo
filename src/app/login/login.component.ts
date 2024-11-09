@@ -3,34 +3,36 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { API_URL } from '../../app/api/constants'
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  email: string = '';
+  cpf: string = '';
   senha: string = '';
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  logar(): void {
-    const body = { email: this.email, senha: this.senha };
+  async logar() {
+    const body = {
+      cpf: this.cpf,
+      senha: this.senha
+    };
 
-    this.http.post(`${API_URL}/login`, body).subscribe({
-      next: (resp: any) => {
-        if (resp && resp.token) {
-          localStorage.setItem('TOKEN', resp.token);
-          this.router.navigate(['/estoque']);
-        } else {
-          console.error('A resposta não possui dados.', resp);
-          alert('Erro ao fazer login, por favor tente novamente.');
-        }
-      },
-      error: (err) => {
-        console.error('Erro na requisição:', err);
-        alert(err.error ? err.error.erro : 'Erro ao fazer login, por favor tente novamente.');
+    try {
+      const resp: any = await this.http.post('http://localhost:3010/login', body).toPromise();
+      if (resp && resp.token) {
+        localStorage.setItem('TOKEN', resp.token);
+        this.router.navigate(['/home']);
+      } else {
+        console.error("A resposta não possui dados.", resp);
+        alert("Erro ao fazer login, por favor tente novamente.");
       }
-    });
+    } catch (err: any) {
+      console.error("Erro na requisição:", err);
+      alert(err.error?.erro || "Erro ao fazer login, por favor tente novamente.");
+    }
   }
 }
