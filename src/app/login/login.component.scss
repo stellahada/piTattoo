@@ -1,4 +1,18 @@
+@font-face {
+    font-family: Angel;
+    src: url('../../../public/assets/fonts/Angelrhapsody.ttf');
+}
 
+@font-face {
+    font-family: 'Satoshi-Bold';
+    src: url('../../../public/assets/fonts/Satoshi-Bold.woff2') format('woff2'),
+         url('../../../public/assets/fonts/Satoshi-Bold.woff') format('woff'),
+         url('../../../public/assets/fonts/Satoshi-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+  
 * {
     margin: 0;
     box-sizing: border-box;
@@ -58,11 +72,6 @@
         border-radius: 10px;
         display: flex;
         flex-direction: column;
-        
-        .form {
-            display: flex;
-            flex-direction: column;
-
             .inputs {
                 display: flex;
                 flex-direction: column;
@@ -83,7 +92,7 @@
                     background-color: #F2E4DA;
                     margin-bottom: 25px;
                 }
-            }
+            
         }
         .botao {
             display: flex;
