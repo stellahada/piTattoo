@@ -28,7 +28,7 @@ export class LoginComponent {
   
     console.log("Enviando dados:", body); // Verifique os dados que estão sendo enviados
   
-    this.http.post('http://localhost:8080/login/l', body, {
+    this.http.post('http://localhost:8080/home/login', body, {
       headers: { 'Content-Type': 'application/json' }
     }).subscribe({
       next: (resp: any) => {
